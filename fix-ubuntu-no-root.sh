@@ -17,12 +17,6 @@ echo "Editing config..."
 sed 's/\[Security\]/AllowRoot = true\nAllowRemoteRoot = true/g' -i /etc/gdm3/custom.conf
 sed 's/auth    required    pam_succeed_if.so user != root quiet_success/# &/g' -i /etc/pam.d/gdm-password
 
-echo "Only reboot is left"
+echo "*] Make sure you have set password for root (if not: sudo passwd root)"
+echo "Restart and you're done"
 
-while [[ -z "$prompt" ]]; do
-	read -p "Do you want me to reboot system[Y/n]: " prompt
-done
-
-case ${prompt,,} in
-	y)	reboot ;;
-esac
