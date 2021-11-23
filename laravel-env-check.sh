@@ -50,6 +50,7 @@ echo -en "Checking version:\t\t\t"
 }
 
 check_extensions
+sudo apt-get install php-mysql -y &> /dev/null
 
 echo -en "Checking composer\t\t\t"
 which composer &> /dev/null && echo "${s}[ OK ]${r}" || sudo apt-get install composer -y &> /dev/null
