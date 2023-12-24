@@ -25,7 +25,7 @@ sudo systemctl enable docker
 sudo addgroup wheel
 sudo usermod -aG wheel $USER
 sudo usermod -aG docker $USER
-
+sudo chmod 777 /var/run/docker.sock
 
 # Install k8s
 curl -LO "https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl"
